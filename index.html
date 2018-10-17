@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Genesis Block Test</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="main">
+			<h3 style="color: #fff; margin-left: 25%; font-size: 35px;">Genesis Block Test
+			</h3>
+			<div class="genesis-block">
+				<div class="genesis-properties">
+					<h3>Hash: </br></h3>
+					<span style="font-size: 16px; font-weight: normal;     line-height: 0px;">{{ currentHash }}</span>
+					<h3 style="text-align: center; color: #52B1DB">Transaction Information</h3>
+					<label for="amount"> Amount</label><input type="text" v-model='amount' required ><br><br>	<br>
+					<label for="sender">Sender</label><input type="text" v-model='sender'><br><br><br>
+					<label for="recipient">Recipient</label><input type="text" v-model='recipient'><br><br>
+					<span style="color: red; font-size: 10px;">* Complete all fields</span>
+					<button @click="getInformation" href="#" class="send-information" v-bind:disabled='(amount.length && sender.length&recipient.length) === 0 ? true : false'> Send Information</button>
+					<div class="genesis-footer">
+						<p>Time Stamp: <span class="footer-data">{{ timeStamp }}</span> </p>
+						<p>Previous Hash: <span class="footer-data">{{ previousHash }}</span></p>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>
